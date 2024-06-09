@@ -8,8 +8,8 @@
 2. [Nodejs](https://nodejs.org/en/) `v20.14.0`
    *    NPM `10.8.1`
    *    Yarn `1.22.22` (para habilitar ele no `corepack enable`)
-   3. [Python](https://www.python.org/) `Python 3.11.2`
-4. [Robot Framework](https://robotframework.org/) `Robot Framework 6.0.2 (Python 3.11.2 on win32)`
+3. [Python](https://www.python.org/) `Python 3.10.12`
+4. [Robot Framework](https://robotframework.org/) `Robot Framework 7.0 (Python 3.10.12 on linux)`
 5. [Library Browser](https://github.com/MarketSquare/robotframework-browser)
 6. [Docker](https://www.docker.com/) `version 24.0.5, build 24.0.5-0ubuntu1~22.04.1`
 
