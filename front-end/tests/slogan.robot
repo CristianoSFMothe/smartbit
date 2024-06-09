@@ -1,5 +1,4 @@
 *** Settings ***
-
 Documentation        Teste para verificar o Slogan da Smarbit na Landing Page
 
 Library    Browser

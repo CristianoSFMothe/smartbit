@@ -13,6 +13,30 @@
 5. [Library Browser](https://github.com/MarketSquare/robotframework-browser)
 6. [Docker](https://www.docker.com/) `version 24.0.5, build 24.0.5-0ubuntu1~22.04.1`
 
+## Configurações iniciais
+
+1. Primeiro devemos criar o ambiente virtual:
+
+```bash
+# Linux
+python3 -m venv venv
+
+# Windows
+python -m venv venv  
+```
+
+2. Após a criação do venv vamos ativa-lo:
+
+```bash
+# Linux
+source venv/bin/activate
+
+# Windows
+venv\Scripts\Activate
+```
+
+> OBS.: Se o comando `venv\Scripts\Activate` não funcionar no Windows, usar o comando `.\venv\Scripts\activate` Caso algum comando retorne um erro de permissão execute o código e tente novamente: `Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned`
+
 ## Configura do Database 
 
 Criar um arquivo na raiz do projeto `docker-compose.yaml` com o código:
