@@ -19,7 +19,7 @@ Deve inicia o cadastro do cliente
 
     Fill Text        id=name        ${account}[name]
     Fill Text        id=email       ${account}[email]
-    Fill Text        id=document    ${account}[document]
+    Fill Text        id=cpf    ${account}[cpf]
 
     Click            css=button >> text=Cadastrar
 
@@ -38,7 +38,7 @@ Campo nome deve ser obrigatório
     ...             Faça seu cadastro e venha para a Smartbit!
   
     Fill Text        id=email       cristiano@gmail.com
-    Fill Text        id=document    91314080016
+    Fill Text        id=cpf    91314080016
 
     Click            css=button >> text=Cadastrar
 
@@ -60,7 +60,7 @@ Campo email deve ser obrigatório
     ...             Faça seu cadastro e venha para a Smartbit!
   
     Fill Text        id=name        Cristiano Ferreira
-    Fill Text        id=document    91314080016
+    Fill Text        id=cpf    91314080016
 
     Click            css=button >> text=Cadastrar
 
@@ -70,7 +70,7 @@ Campo email deve ser obrigatório
     Get Text    css=form .notice    equal    Por favor, informe o seu melhor e-mail
 
 Campo documento deve ser obrigatório
-    [Tags]    required_document
+    [Tags]    required_cpf
 
     ${account}    Get Fake Account
 
@@ -105,7 +105,7 @@ Email no formato inválido
   
     Fill Text        id=name           Cristiano Ferreira
     Fill Text        id=email          cristiano*gmail.com
-    Fill Text        id=document       23725962090
+    Fill Text        id=cpf      23725962090
 
     Click            css=button >> text=Cadastrar
 
@@ -115,7 +115,7 @@ Email no formato inválido
     Get Text    css=form .notice    equal    Oops! O email informado é inválido
 
 Documento no formato inválido
-    [Tags]    invalid_document
+    [Tags]    invalid_cpf
 
     ${account}    Get Fake Account
 
@@ -128,7 +128,7 @@ Documento no formato inválido
   
     Fill Text        id=name           Cristiano Ferreira
     Fill Text        id=email          cristiano@gmail.com
-    Fill Text        id=document       2372596209A
+    Fill Text        id=cpf       2372596209A
 
     Click            css=button >> text=Cadastrar
 
