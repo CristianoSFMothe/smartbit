@@ -8,65 +8,42 @@ Test Teardown     Take Screenshot
 
 *** Test Cases ***
 Deve inicia o cadastro do cliente
+    [Tags]    login
 
     ${account}    Get Fake Account
    
     Submit sigunp form    ${account}  
-    Verify welcome messagem  
+    Verify welcome messagem 
 
-Campo nome deve ser obrigatório
-    [Tags]    required_name
+Tentativa de pré-cadastro
+    [Tags]        attempt
 
-    ${account}    Create Dictionary
-    ...           name=${EMPTY}
-    ...           email=cristiano@gmail.com
-    ...           cpf=91314080016
-   
-    Submit sigunp form    ${account}
-    Notice should be      Por favor informe o seu nome completo
+    [Template]    Attempt signut
 
-Campo email deve ser obrigatório
-    [Tags]    required_email
+    ${EMPTY}              cristiano@gmail.com    91314080016      Por favor informe o seu nome completo
+    Cristiano Ferreira    ${EMPTY}               91314080016      Por favor, informe o seu melhor e-mail
+    Cristiano Ferreira    cristiano@gmail.com    ${EMPTY}         Por favor, informe o seu CPF
+    Cristiano Ferreira    cristiano*gmail.com    91314080016      Oops! O email informado é inválido
+    Cristiano Ferreira    www.teste.com.br       91314080016      Oops! O email informado é inválido
+    Cristiano Ferreira    aaabbbb                91314080016      Oops! O email informado é inválido
+    Cristiano Ferreira    1111111                91314080016      Oops! O email informado é inválido
+    Cristiano Ferreira    */-/@#*                91314080016      Oops! O email informado é inválido
+    Cristiano Ferreira    cristiano@gmail.com    91314080022      Oops! O CPF informado é inválido
+    Cristiano Ferreira    cristiano@gmail.com    9131408          Oops! O CPF informado é inválido
+    Cristiano Ferreira    cristiano@gmail.com    AABBAS           Oops! O CPF informado é inválido
+    Cristiano Ferreira    cristiano@gmail.com    @#$%¨%@          Oops! O CPF informado é inválido
 
-    ${account}    Create Dictionary
-    ...           name=Cristiano Ferreira
-    ...           email=${EMPTY}
-    ...           cpf=91314080016
-   
-    Submit sigunp form    ${account}
-    Notice should be      Por favor, informe o seu melhor e-mail
-
-Campo documento deve ser obrigatório
-    [Tags]    required_cpf
+*** Keywords ***
+Attempt signut
+    [Arguments]        ${name}    ${email}    ${cpf}    ${output_message}
 
     ${account}    Create Dictionary
-    ...           name=Cristiano Ferreira
-    ...           email=cristiano@gmail.com
-    ...           cpf=${EMPTY}
+    ...           name=${name}
+    ...           email=${email}
+    ...           cpf=${cpf}
    
     Submit sigunp form    ${account}
-    Notice should be      Por favor, informe o seu CPF
+    Notice should be      ${output_message}
 
-Email no formato inválido
-    [Tags]    invalid_email
-
-    ${account}    Create Dictionary
-    ...           name=Cristiano Ferreira
-    ...           email=cristiano*gmail.co
-    ...           cpf=91314080016
-   
-    Submit sigunp form    ${account}
-    Notice should be      Oops! O email informado é inválido
-
-Documento no formato inválido
-    [Tags]    invalid_cpf
-
-    ${account}    Create Dictionary
-    ...           name=Cristiano Ferreira
-    ...           email=cristiano@gmail.com
-    ...           cpf=9131408001A
-   
-    Submit sigunp form    ${account}
-    Notice should be      Oops! O CPF informado é inválido
 
 
