@@ -14,3 +14,18 @@ Deve logar como Gestor de Academia
     Go to login page
     Submit login form    sac@smartbit.com    pwd123
     User is logged in    sac@smartbit.com 
+
+Não deve logar com senha incorreta
+    [Tags]    pass_inv
+    
+    Go to login page
+    Submit login form    sac@smartbit.com    pwd1234
+    Toast should be      As credenciais de acesso fornecidas são inválidas. Tente novamente!
+
+Não deve logar com e-mail não cadastrado
+    [Tags]    email_404
+    
+    Go to login page
+    Submit login form    404@smartbit.com    pwd1234
+    Toast should be      As credenciais de acesso fornecidas são inválidas. Tente novamente!
+    
