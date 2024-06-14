@@ -3,6 +3,7 @@ Documentation        Arquivpo principal
 
 Library    Browser
 Library    lib/Account.py
+Library    lib/Database.py
 
 Resource    pages/Landing.resource
 Resource    pages/Welcome.resource
