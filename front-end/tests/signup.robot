@@ -11,7 +11,7 @@ Deve inicia o cadastro do cliente
     [Tags]    smoke
 
     ${account}    Create Dictionary
-    ...           name=Cristiano Ferreira
+    ...           name=Cristiano Mothe
     ...           email=crisitiano@gmail.com
     ...           cpf=42945318008       
 

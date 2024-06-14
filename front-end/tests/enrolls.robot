@@ -9,16 +9,24 @@ Test Teardown    Take Screenshot
 *** Test Cases ***
 Deve poder realizar uma nova adesão
 
+    ${account}    Create Dictionary
+    ...           name=Aline Mothe
+    ...           email=aline@gmail.com    
+    ...           cpf=08073810042
+
+    Delete Account By Email    ${account}[email]
+    Insert Account             ${account}
+
     Go to login page
     Submit login form    sac@smartbit.com    pwd123
     User is logged in    sac@smartbit.com
 
     Go to Enrolls
     Go to enroll form
-    Select account    Cristiano Ferreira    42945318008
+    Select account    Aline Mothe        08073810042
     Select plan       Plano Black
     Fill payment card      4242424242424242
-    ...                    Cristiano Ferreira
+    ...                    Aline Mothe
     ...                    12
     ...                    2030
     ...                    123
