@@ -10,8 +10,14 @@ Resource    pages/Landing.resource
 Resource    pages/Welcome.resource
 Resource    pages/Login.resource
 Resource    pages/Accounts.resource
+Resource    pages/Memberships.resource
 Resource    pages/components/Toast.resource
+Resource    pages/components/Navbar.resource
 Resource    pages/components/BoxNotice.resource
+
+*** Variables ***
+${ADMIN_EMAIL}    sac@smartbit.com    
+${ADMIN_PASS}     pwd123
 
 
 *** Keywords ***
@@ -28,4 +34,8 @@ Get Json fixture
 
     RETURN    ${data}[${scenario}]
 
-    # /home/cristiano/Documentos/GitHub/smartbit/front-end/resources/fixtures/memberships.json
+SignIn admin
+
+    Go to login page
+    Submit login form    ${ADMIN_EMAIL}   ${ADMIN_PASS}
+    User is logged in    ${ADMIN_EMAIL}
