@@ -15,7 +15,8 @@ Deve inicia o cadastro do cliente
     ...           email=cristiano@gmail.com
     ...           cpf=42945318008       
 
-    Delete Account By Email   ${account}[email]
+    Delete Account By Email         ${account}[email]
+    Delete Account By CPF           ${account}[cpf]
    
     Submit sigunp form    ${account}  
     Verify welcome messagem 
@@ -23,30 +24,31 @@ Deve inicia o cadastro do cliente
 Não deve realizar pré-cadastro de usuário com e-mail duplicado
     [Tags]    dup_email
 
-    ${account}    Create Dictionary
+    ${account_email_dup}    Create Dictionary
     ...           name=Cristiano Mothe
     ...           email=crisitiano@gmail.com
     ...           cpf=04528847051       
      
-    Delete Account By Email   ${account}[email]
-    Submit sigunp form        ${account}  
-    Sleep    8
-    Submit sigunp form        ${account}  
-    Toast should be           O e-mail fornecido já foi cadastrado!
+    Delete Account By Email           ${account_email_dup}[email]
+    Insert Account Duplicate Email    ${account_email_dup}
+    Submit sigunp form                ${account_email_dup}  
+    Toast should be                   O e-mail fornecido já foi cadastrado!
+    Delete Account By Email           ${account_email_dup}[email]
 
 Não deve realizar pré-cadastro de usuário com CPF duplicado
     [Tags]    dup_cpf
 
-    ${account}    Create Dictionary
-    ...           name=Cristiano Mothe
-    ...           email=crisitiano@yahoo.com
-    ...           cpf=42945318008       
+    ${account_cpf_dup}    Create Dictionary
+    ...                   name=Cristiano Mothe
+    ...                   email=crisitiano@yahoo.com
+    ...                   cpf=42945318008       
  
-    Delete Account By Email   ${account}[email]
-    Submit sigunp form        ${account}  
-    Sleep    8
-    Submit sigunp form        ${account}  
-    Toast should be           O CPF fornecido já foi cadastrado!
+    Delete Account By Email         ${account_cpf_dup}[email]
+    Delete Account By CPF           ${account_cpf_dup}[cpf]  
+    Insert Account Duplicate CPF    ${account_cpf_dup}
+    Submit sigunp form              ${account_cpf_dup}  
+    Toast should be                 O CPF fornecido já foi cadastrado!
+    
 
 
 Tentativa de pré-cadastro

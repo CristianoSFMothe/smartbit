@@ -29,10 +29,9 @@ Não deve realizar a adesão duplicado
 
     Delete Account By Email    ${data}[account][email]
     Insert Account             ${data}[account]
+    # Insert Membership
 
     SignIn admin    
     Go to memberships
-    Create new membership    ${data}   
-    Sleep    8
     Create new membership    ${data}   
     Toast should be    O usuário já possui matrícula.  
