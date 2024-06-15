@@ -26,10 +26,8 @@ Não deve realizar a adesão duplicado
     [Tags]    dup_membership
 
     ${data}    Get Json fixture    memberships    duplicate
-
-    Delete Account By Email    ${data}[account][email]
-    Insert Account             ${data}[account]
-    # Insert Membership
+    
+    Insert Membership    ${data} 
 
     SignIn admin    
     Go to memberships
