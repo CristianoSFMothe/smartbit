@@ -12,13 +12,42 @@ Deve inicia o cadastro do cliente
 
     ${account}    Create Dictionary
     ...           name=Cristiano Mothe
-    ...           email=crisitiano@gmail.com
+    ...           email=cristiano@gmail.com
     ...           cpf=42945318008       
 
     Delete Account By Email   ${account}[email]
    
     Submit sigunp form    ${account}  
     Verify welcome messagem 
+
+Não deve realizar pré-cadastro de usuário com e-mail duplicado
+    [Tags]    dup_email
+
+    ${account}    Create Dictionary
+    ...           name=Cristiano Mothe
+    ...           email=crisitiano@gmail.com
+    ...           cpf=04528847051       
+     
+    Delete Account By Email   ${account}[email]
+    Submit sigunp form        ${account}  
+    Sleep    8
+    Submit sigunp form        ${account}  
+    Toast should be           O e-mail fornecido já foi cadastrado!
+
+Não deve realizar pré-cadastro de usuário com CPF duplicado
+    [Tags]    dup_cpf
+
+    ${account}    Create Dictionary
+    ...           name=Cristiano Mothe
+    ...           email=crisitiano@yahoo.com
+    ...           cpf=42945318008       
+ 
+    Delete Account By Email   ${account}[email]
+    Submit sigunp form        ${account}  
+    Sleep    8
+    Submit sigunp form        ${account}  
+    Toast should be           O CPF fornecido já foi cadastrado!
+
 
 Tentativa de pré-cadastro
     [Tags]        attempt
