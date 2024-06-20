@@ -14,6 +14,7 @@ Resource    pages/Memberships.resource
 Resource    pages/components/Toast.resource
 Resource    pages/components/Navbar.resource
 Resource    pages/components/BoxNotice.resource
+Resource    pages/components/Modal.resource
 
 *** Variables ***
 ${ADMIN_EMAIL}    sac@smartbit.com    
@@ -22,8 +23,9 @@ ${ADMIN_PASS}     pwd123
 
 *** Keywords ***
 Start Session
-    New Browser     chromium    headless=False
-    New Page        http://localhost:3000    
+    New Browser    browser=chromium    headless=False    
+    New Context    viewport={'width': 1920, 'height': 1080}
+    New Page       http://localhost:3000    
 
 Get Json fixture
     [Arguments]    ${file_name}    ${scenario}

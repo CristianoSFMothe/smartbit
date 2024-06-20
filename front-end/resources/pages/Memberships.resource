@@ -41,3 +41,16 @@ Fill payment card
     Fill Text    css=input[name=card_month]     ${credit_card}[month]
     Fill Text    css=input[name=card_year]      ${credit_card}[year]
     Fill Text    css=input[name=card_cvv]       ${credit_card}[cvv]
+
+Request removal by name
+    [Arguments]    ${name}
+
+    Click    xpath=//td[text()="${name}"]/..//button
+
+Membershio should not be visible
+    [Arguments]    ${name}
+
+    Wait For Elements State    css=table tbody tr >> text=${name}
+    ...    detached     5
+
+    

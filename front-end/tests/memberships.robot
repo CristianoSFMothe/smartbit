@@ -46,6 +46,19 @@ Deve buscar por nome
     Search by name           ${data}[account][name]
     Should filter by name    ${data}[account][name]
 
+Deve excluir uma matricula
+    [Tags]    remove
+
+    ${data}    Get Json fixture   memberships    remove
+
+    Insert Membership    ${data} 
+
+    SignIn admin
+    Go to memberships
+    Request removal by name             ${data}[account][name]
+    Confirm removal
+    Membershio should not be visible    ${data}[account][name]   
+
     
 
     

@@ -55,5 +55,24 @@
       "year": "2030",
       "cvv": "123"
     }
+  },
+  "remove": {
+    "account": {
+      "name": "Wanderson Féroes",
+      "email": "wanderson@hotmail.com",
+      "cpf": "83058837011"
+    },
+    "plan": {
+      "name": "Plano Black",
+      "id": 2,
+      "price": 79.99
+    },
+    "credit_card": {
+      "number": "4242424242424242",
+      "holder": "Wanderson Féroes",
+      "month": "12",
+      "year": "2030",
+      "cvv": "123"
+    }
   }
 }
