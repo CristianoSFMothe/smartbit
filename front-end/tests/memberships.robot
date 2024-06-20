@@ -37,12 +37,14 @@ Não deve realizar a adesão duplicado
 Deve buscar por nome
     [Tags]    search
 
-    ${name}    Set Variable    Emily Stone
+    ${data}    Get Json fixture   memberships    search
+
+    Insert Membership    ${data} 
 
     SignIn admin
     Go to memberships
-    Search by name           ${name}
-    Should filter by name    ${name}
+    Search by name           ${data}[account][name]
+    Should filter by name    ${data}[account][name]
 
     
 

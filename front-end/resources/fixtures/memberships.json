@@ -12,10 +12,10 @@
     },
     "credit_card": {
       "number": "4242424242424242",
-      "holder":"Aline Mothe",
-      "month":"12",
-      "year":"2030",
-      "cvv":"123"
+      "holder": "Aline Mothe",
+      "month": "12",
+      "year": "2030",
+      "cvv": "123"
     }
   },
   "duplicate": {
@@ -31,10 +31,29 @@
     },
     "credit_card": {
       "number": "4242424242424242",
-      "holder":"Jonas Brother",
-      "month":"12",
-      "year":"2030",
-      "cvv":"123"
+      "holder": "Jonas Brother",
+      "month": "12",
+      "year": "2030",
+      "cvv": "123"
+    }
+  },
+  "search": {
+    "account": {
+      "name": "Mariana da Silva",
+      "email": "marianasilva@gmail.com",
+      "cpf": "32069744027"
+    },
+    "plan": {
+      "name": "Plano Smart",
+      "id": 1,
+      "price": 99.99
+    },
+    "credit_card": {
+      "number": "4242424242424242",
+      "holder": "Mariana da Silva",
+      "month": "12",
+      "year": "2030",
+      "cvv": "123"
     }
   }
 }
