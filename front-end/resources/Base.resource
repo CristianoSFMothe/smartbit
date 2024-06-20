@@ -39,3 +39,17 @@ SignIn admin
     Go to login page
     Submit login form    ${ADMIN_EMAIL}   ${ADMIN_PASS}
     User is logged in    ${ADMIN_EMAIL}
+
+Search by name
+    [Arguments]        ${name}
+
+    Fill Text    css=input[placeholder^=Busque]    ${name}
+
+    Wait For Elements State    css=strong >> text=Total: 1
+    ...                        visible    5
+
+Should filter by name
+    [Arguments]    ${name}
+
+    Wait For Elements State    css=table tbody tr >> text=${name}
+    ...                        visible    5
