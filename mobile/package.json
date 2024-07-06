@@ -1,0 +1,23 @@
+{
+  "name": "mobile",
+  "version": "1.0.0",
+  "description": "Teste mobile para o aplicativo da SmartBit",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CristianoSFMothe/smartbit.git"
+  },
+  "author": "Cristiano Ferreira Mothe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CristianoSFMothe/smartbit"
+  },
+  "homepage": "https://github.com/CristianoSFMothe/smartbit#readme",
+  "dependencies": {
+    "appium": "^2.5.1",
+    "appium-doctor": "^1.16.2"
+  }
+}

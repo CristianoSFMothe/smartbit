@@ -1,0 +1,23 @@
+*** Settings ***
+Documentation    Arquivo priuncipal do projeto de teste automatizados para mobile
+
+Library    AppiumLibrary
+
+*** Keywords ***
+Start session
+
+    Open Application    http://localhost:4723    
+    ...                 platformName=Android
+    ...                 deviceName=Emulator
+    ...                 automationName=UIAutomator2
+    ...                 app=${EXECDIR}/app/smartbit-beta.apk
+    ...                 udid=emulator-5554
+    ...                 autoGrantPermissions=true
+
+    Wait Until Page Contains    IP da API    30s
+
+
+Finish session
+    
+    Capture Page Screenshot
+    Close Application
