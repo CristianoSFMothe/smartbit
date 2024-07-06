@@ -10,7 +10,11 @@ Test Teardown     Finish session
 Deve logar com o IP e CPF
     [Tags]    login
 
-    Signin with document    08073810042
+    ${data}    Get Json fixture    login
+
+    Insert Membership    ${data}
+
+    Signin with document    ${data}[account][cpf]
     User is logged in
 
 Não deve logar com CPF não cadastrado

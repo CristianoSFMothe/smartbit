@@ -1,0 +1,21 @@
+{
+  "login": {
+    "account": {
+      "name": "Cristiano Mothe",
+      "email": "cristiano@hotmail.com",
+      "cpf": "88502371037"
+    },
+    "plan": {
+      "name": "Plano Black",
+      "id": 2,
+      "price": 79.99
+    },
+    "credit_card": {
+      "number": "4242424242424242",
+      "holder": "Cristiano Mothe",
+      "month": "12",
+      "year": "2030",
+      "cvv": "123"
+    }
+  }
+}
