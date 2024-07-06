@@ -17,5 +17,26 @@
       "year": "2030",
       "cvv": "123"
     }
+  },
+  "update": {
+    "account": {
+      "name": "Dominic Toreto",
+      "email": "dominic@hotmail.com",
+      "cpf": "30270109056",
+      "height": "190",
+      "weight": "80"
+    },
+    "plan": {
+      "name": "Plano Black",
+      "id": 2,
+      "price": 79.99
+    },
+    "credit_card": {
+      "number": "4242424242424242",
+      "holder": "Dominic Toreto",
+      "month": "12",
+      "year": "2030",
+      "cvv": "123"
+    }
   }
 }

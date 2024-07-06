@@ -2,8 +2,8 @@
 Documentation        Arquivpo principal
 
 Library    Browser
-Library    lib/Account.py
-Library    lib/Database.py
+Library    ../../lib/Account.py
+Library    ../../lib/Database.py
 Library    JSONLibrary
 
 Resource    pages/Landing.resource

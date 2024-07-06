@@ -7,7 +7,9 @@ Library    ../../lib/Database.py
 
 Resource    ./actions/login.resource
 Resource    ./actions/account.resource
+Resource    ./actions/mybody.resource
 Resource    ./actions/components/popup.resource
+Resource    ./actions/components/menu.resource
 
 *** Keywords ***
 Start session
