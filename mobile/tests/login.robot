@@ -8,11 +8,26 @@ Test Teardown     Finish session
 
 *** Test Cases ***
 Deve logar com o IP e CPF
+    [Tags]    login
 
-    Input Text    xpath=//android.widget.EditText[@resource-id="ipAddress"]    10.0.0.40
-    Input Text    xpath=//android.widget.EditText[@resource-id="cpf"]          08073810042
+    Signin with document    08073810042
+    User is logged in
 
-    Click Element    xpath=//android.view.ViewGroup[@resource-id="btnLogin"]
+Não deve logar com CPF não cadastrado
+    [Tags]    fail
 
-    Wait Until Element Is Visible    xpath=//android.widget.TextView[@resource-id="myAccountTitle"]    30s
-    Element Name Should Be   xpath=//android.widget.TextView[@resource-id="myAccountTitle"]    Sua transformação começa aqui!
+    Signin with document    30890557080
+    Popup have text         Acesso não autorizado! Entre em contato com a central de atendimento
+
+Não deve logar com CPF inválido
+    [Tags]    cpf_invalid
+
+    Signin with document    30890557081
+    Popup have text         CPF inválido, tente novamente
+
+Não deve logar sem informar CPF 
+    [Tags]    cpf_empty
+
+    Signin with document    ${EMPTY}
+    Popup have text         Informe o número do seu CPF
+    

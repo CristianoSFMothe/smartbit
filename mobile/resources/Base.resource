@@ -3,6 +3,10 @@ Documentation    Arquivo priuncipal do projeto de teste automatizados para mobil
 
 Library    AppiumLibrary
 
+Resource    ./actions/login.resource
+Resource    ./actions/account.resource
+Resource    ./actions/components/popup.resource
+
 *** Keywords ***
 Start session
 
