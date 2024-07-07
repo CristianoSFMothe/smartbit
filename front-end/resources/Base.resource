@@ -6,6 +6,8 @@ Library    ../../lib/Account.py
 Library    ../../lib/Database.py
 Library    JSONLibrary
 
+Variables    Env.py
+
 Resource    pages/Landing.resource
 Resource    pages/Welcome.resource
 Resource    pages/Login.resource
@@ -23,9 +25,9 @@ ${ADMIN_PASS}     pwd123
 
 *** Keywords ***
 Start Session
-    New Browser    browser=chromium    headless=False    
+    New Browser    browser=${BROWSER}    headless=${HEADLESS}    
     New Context    viewport={'width': 1920, 'height': 1080}
-    New Page       http://localhost:3000    
+    New Page       ${BASE_URL} 
 
 Get Json fixture
     [Arguments]    ${file_name}    ${scenario}
