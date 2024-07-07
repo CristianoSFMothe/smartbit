@@ -17,8 +17,14 @@ Deve poder cadastrar minhas medidas
     User is logged in
     
     Touche my body
-    Send weight and height    ${data}[account]
-    
+    Send weight and height    ${data}[account] 
+
     Popup have text           Seu cadastro foi atualizado com sucesso
+
+    Set user token
+    ${account}    Get account by name    ${data}[account][name]
+
+    Should Be Equal    ${account}[weight]    ${data}[account][weight]
+    Should Be Equal    ${account}[height]    ${data}[account][height]
 
     

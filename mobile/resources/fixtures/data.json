@@ -23,8 +23,8 @@
       "name": "Dominic Toreto",
       "email": "dominic@hotmail.com",
       "cpf": "30270109056",
-      "height": "190",
-      "weight": "80"
+      "weight": 80,
+      "height": 190
     },
     "plan": {
       "name": "Plano Black",
@@ -35,8 +35,8 @@
       "number": "4242424242424242",
       "holder": "Dominic Toreto",
       "month": "12",
-      "year": "2030",
       "cvv": "123"
     }
   }
 }
+
